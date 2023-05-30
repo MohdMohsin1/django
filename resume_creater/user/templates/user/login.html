@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}	
+{% block title %}login{% endblock title %}
+{% block body %}
+
+<div class="container w-50 py-5">
+	<form method="POST" novalidate>
+		{% csrf_token %}
+		<h2 class="text-center">Log In</h2>
+		<hr class="w-25 mx-auto">
+		{{ form|crispy }}		
+		<div class="form-check mb-3">
+			<input class="form-check-input" type="checkbox" name="remember_me" id="remember_me">
+			<label class="form-check-label" for="remember_me">Remember Me</label>
+		</div>    
+		<input type="submit" class="btn btn-primary" value="Register" />
+	</form>
+</div>
+
+
+{% endblock body %}
