@@ -35,10 +35,11 @@ def logout_view(request):
 def signup(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
+        from django.
+        messages.error(request, "Something wrong here, it may be that you already have account!")
         if form.is_valid():
             form.save()
             messages.success(request,'Account created successfully !!!')
     else:
-        messages.error(request, "Something wrong here, it may be that you already have account!")
         form = UserForm()
     return render(request, 'user/signup.html', {'form': form})
