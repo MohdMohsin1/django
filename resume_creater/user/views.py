@@ -39,6 +39,6 @@ def signup(request):
             form.save()
             messages.success(request,'Account created successfully !!!')
     else:
+        messages.error(request, "Something wrong here, it may be that you already have account!")
         form = UserForm()
     return render(request, 'user/signup.html', {'form': form})
-
