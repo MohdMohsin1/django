@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 {% load crispy_forms_tags %}	
 {% block title %}login{% endblock title %}
 {% block body %}
@@ -15,6 +16,12 @@
 		</div>    
 		<input type="submit" class="btn btn-primary" value="Register" />
 	</form>
+	<button class="btn btn-outline-info">
+        <a href="{% provider_login_url 'google'%}?next=/">
+            <i class="fab fa-google"></i>
+            Login with Google
+        </a>
+    </button>
 </div>
 
 

@@ -6,4 +6,5 @@ urlpatterns = [
     path('user/',include('user.urls')),
     path('resume/',include('create_resume.urls')),
     path('php/',include('api.urls')),
+    path("", include("allauth.urls")), #most important
 ]
